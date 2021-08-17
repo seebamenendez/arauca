@@ -1,0 +1,61 @@
+@import "variables";
+
+/*__________________PARA EL MENU DESPLEGABLE________________________*/
+
+header{
+    width: auto;
+    margin: 0 auto;
+}
+
+ul{
+    list-style:none;
+	position: absolute;
+    font-weight: 400;
+}
+
+li{
+	display: inline-block;
+	list-style:none;
+	position:relative;
+	width:$ancho*2;
+    text-align: center;
+    text-decoration:none;
+    a {
+        color: white;
+    }
+}
+
+
+
+/*Cambia el color por donde pasa el mouse*/
+
+li>a:hover {
+    text-decoration: underline;
+    text-decoration-color: $colorPrimario;
+    background-color: none;
+    margin-bottom: 0%;
+}
+
+
+.navbar {
+    padding-top: 0%;
+    padding-bottom: 0%;
+    color:$colorPrimario;
+}
+
+
+/*Abre los submenu si es que tiene*/
+
+li:hover>ul {
+    display:block;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 5px;
+}
+
+/*Oculta los submenu si es que tiene*/
+
+li>ul {
+    display: none;
+}
+

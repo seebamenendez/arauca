@@ -1,0 +1,317 @@
+@charset "UTF-8";
+/*____________________CODIGO PARA EL FOOTER________________________ */
+.contenidoPrincipal {
+  display: flex;
+  line-height: 2.5; }
+
+.contenidoPrincipal .cajaEnComun {
+  flex-basis: 50%;
+  padding: 10px 20px; }
+
+.cajaEnComun h6 {
+  font-size: 1.125rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #284d0c;
+  text-align: center; }
+
+/*Código para la caja contenedora de lo que esta abajo de los titulos */
+.cajaEnComun .contenido {
+  margin: 10px 0 0 0;
+  position: relative; }
+
+.contenido-centrado {
+  color: #284d0c;
+  text-align: center; }
+
+.contenido__link {
+  text-decoration: none;
+  color: #284d0c; }
+
+/*Código de la linea debajo de los titulos (Final) */
+.cajaEnComun .contenido:before {
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #a8a8a8; }
+
+/* Código de la linea debajo de los titulos (Inicio) */
+.cajaEnComun .contenido:after {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background: rgba(47, 88, 14, 0.705);
+  top: -10px; }
+
+/*__________________PARA EL MENU DESPLEGABLE________________________*/
+header {
+  width: auto;
+  margin: 0 auto; }
+
+ul {
+  list-style: none;
+  position: absolute;
+  font-weight: 400; }
+
+li {
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  width: 120px;
+  text-align: center;
+  text-decoration: none; }
+  li a {
+    color: white; }
+
+/*Cambia el color por donde pasa el mouse*/
+li > a:hover {
+  text-decoration: underline;
+  text-decoration-color: #284d0c;
+  background-color: none;
+  margin-bottom: 0%; }
+
+.navbar {
+  padding-top: 0%;
+  padding-bottom: 0%;
+  color: #284d0c; }
+
+/*Abre los submenu si es que tiene*/
+li:hover > ul {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 5px; }
+
+/*Oculta los submenu si es que tiene*/
+li > ul {
+  display: none; }
+
+/*____________________CODIGO GENERAL_________________________________*/
+* {
+  padding: 0px;
+  margin: 0px; }
+
+/*Le coloco el color de fondo en todos los html */
+body {
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px; }
+
+/*Le coloco un color al titulo h1 */
+h1 {
+  color: #284d0c;
+  margin: 20px; }
+
+/*Creo un ID para el color de los links */
+.link {
+  color: white; }
+
+/*Para borrar el subrayado de los links */
+a:link, a:visited, a:active {
+  text-decoration: none; }
+
+p {
+  margin-bottom: 1.43rem; }
+
+/*_______________CONFIGURAR LA PAGINA PRINCIPAL_______________________*/
+/*grids mobile first*/
+.containerMobile {
+  display: grid;
+  grid-template-areas: "img nav nav" ". carusel ." ". carusel ." ". footer .";
+  grid-template-columns: auto;
+  grid-template-rows: repeat(8, 110px);
+  grid-gap: 1rem; }
+
+.containerMobile .box-1 {
+  grid-area: img; }
+
+.containerMobile .box-2 {
+  grid-area: nav; }
+
+.containerMobile .box-3 {
+  grid-area: carusel; }
+
+.containerMobile .box-4 {
+  grid-area: footer; }
+
+@media only screen and (min-width: 768px) {
+  .containerMobile {
+    grid-template-columns: repeat(3, 1fr auto 1fr); }
+  .containerMobile .box-1 {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1; }
+  .containerMobile .box-2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3; }
+  .containerMobile .box-3 {
+    grid-row: 2 / 5;
+    grid-column: 2 / 3; }
+  .containerMobile .box-4 {
+    grid-row: 8 / 8;
+    grid-column: 1 / 3; } }
+
+@media only screen and (min-width: 1024px) {
+  .containerMobile {
+    grid-template-columns: repeat(4, 1fr); }
+  .containerMobile .box-1 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 4; }
+  .containerMobile .box-2 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 6; }
+  .containerMobile .box-3 {
+    grid-row: 3 / 5;
+    grid-column: 2 / 4; }
+  .containerMobile .box-4 {
+    grid-column: 1 / 5;
+    grid-row: 8 / 8; } }
+
+/*_______________CONFIGURAR LA PAGINA NOSOTROS________________________*/
+.lineaDebajo {
+  text-decoration: underline; }
+
+.border {
+  width: 100%;
+  height: 100%; }
+
+header {
+  grid-area: header; }
+
+footer {
+  grid-area: footer; }
+
+#grilla {
+  width: 90%;
+  max-width: 75em;
+  margin: 1.25em auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas: "header header header" "nav nav nav" ". foto1 texto1" ". texto2 foto2" ". foto3 texto3" "footer footer footer"; }
+
+.header {
+  grid-area: header;
+  padding: 1.25em;
+  background: #fff;
+  box-shadow: 0px 0px 70px rgba(102, 102, 102, 0.2); }
+
+.header .logo {
+  margin-bottom: 1.25em;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px; }
+
+section#foto1 {
+  grid-area: foto1; }
+
+section#foto2 {
+  grid-area: foto2; }
+
+section#foto3 {
+  grid-area: foto3;
+  text-align: center; }
+
+section#texto1 {
+  grid-area: texto1; }
+
+section#texto2 {
+  grid-area: texto2;
+  text-align: center;
+  padding: 150px 0px;
+  height: auto; }
+
+section#texto3 {
+  grid-area: texto3; }
+
+nav {
+  grid-area: nav; }
+
+/*_______________CONFIGURAR LA PAGINA ARAUQUITOS________________________*/
+.seccionArauquitos {
+  width: auto;
+  height: auto;
+  margin: 10px 10px; }
+  .seccionArauquitos .seccionArauquitos-titulo {
+    color: #284d0c; }
+
+.texto {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 10px; }
+  .texto .texto-Arauquitos {
+    color: black;
+    padding: 10px; }
+
+#espaciosEntreFotos {
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 60px;
+  grid-template-rows: auto;
+  margin: 20px;
+  padding: 30px; }
+  #espaciosEntreFotos .item {
+    border: solid 1px;
+    font-size: 21px;
+    padding: 10px; }
+
+/*_______________CONFIGURAR LA PAGINA NEW IN________________________*/
+.fondo-tienda {
+  padding: 1.8rem 0;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 20px; }
+
+.fondo-tienda article {
+  color: #284d0c;
+  font-size: 1rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 10px; }
+
+.fondo-tienda img {
+  grid-row: 1; }
+
+.fondo-tienda .descripcion {
+  grid-row: 2; }
+
+.fondo-tienda .precio {
+  grid-row: 3; }
+
+.fondo-tienda button {
+  grid-row: 4;
+  padding: 0.3rem; }
+
+/* Aumentamos la anchura y altura con un for por 4 veces */
+.zoom-1 {
+  transition: width 1s, height 1s, transform 1s; }
+
+.zoom-2 {
+  transition: width 2s, height 2s, transform 2s; }
+
+.zoom-3 {
+  transition: width 3s, height 3s, transform 3s; }
+
+/* tranformamos el elemento al pasar el mouse por encima al doble de
+       su tamaño con scale(2). */
+.zoom-2:hover {
+  transform: scale(2); }
+
+.zoom-1:hover {
+  transform: scale(1.5); }
+
+.coleccion {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px;
+  grid-gap: 25px;
+  padding: 25px; }
