@@ -98,12 +98,14 @@ li > ul {
 body {
   background-color: white;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  padding: 20px; }
 
 /*Le coloco un color al titulo h1 */
 h1 {
   color: #284d0c;
-  margin: 20px; }
+  margin: 20px;
+  font-size: 24px; }
 
 /*Creo un ID para el color de los links */
 .link {
@@ -118,6 +120,9 @@ p {
 
 /*_______________CONFIGURAR LA PAGINA PRINCIPAL_______________________*/
 /*grids mobile first*/
+.banner {
+  padding: 10px 10px; }
+
 .containerMobile {
   display: grid;
   grid-template-areas: "img nav nav" ". carusel ." ". carusel ." ". footer .";
@@ -173,25 +178,6 @@ p {
 .lineaDebajo {
   text-decoration: underline; }
 
-.border {
-  width: 100%;
-  height: 100%; }
-
-header {
-  grid-area: header; }
-
-footer {
-  grid-area: footer; }
-
-#grilla {
-  width: 90%;
-  max-width: 75em;
-  margin: 1.25em auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, auto);
-  grid-template-areas: "header header header" "nav nav nav" ". foto1 texto1" ". texto2 foto2" ". foto3 texto3" "footer footer footer"; }
-
 .header {
   grid-area: header;
   padding: 1.25em;
@@ -204,46 +190,118 @@ footer {
   text-align: center;
   letter-spacing: 3px; }
 
-section#foto1 {
-  grid-area: foto1; }
+.contenedor {
+  width: 80%;
+  max-width: 1000px;
+  margin: 30px;
+  overflow: hidden; }
 
-section#foto2 {
-  grid-area: foto2; }
+.foto1 {
+  width: 70%;
+  float: left;
+  box-sizing: border-box;
+  padding: 30px; }
 
-section#foto3 {
-  grid-area: foto3;
-  text-align: center; }
-
-section#texto1 {
-  grid-area: texto1; }
-
-section#texto2 {
-  grid-area: texto2;
-  text-align: center;
-  padding: 150px 0px;
+.foto1 img {
+  width: 100%;
   height: auto; }
 
-section#texto3 {
-  grid-area: texto3; }
+.texto1 {
+  width: 30%;
+  padding: 10px 10px;
+  float: left;
+  text-align: center;
+  box-sizing: border-box; }
 
-nav {
-  grid-area: nav; }
+.foto2 {
+  width: 50%;
+  float: right;
+  box-sizing: border-box;
+  padding: 0 40px; }
+
+.foto2 img2 {
+  width: 100%;
+  height: auto; }
+
+.texto2 {
+  width: 50%;
+  padding: 10px 10px;
+  float: right;
+  text-align: left;
+  box-sizing: border-box; }
+
+.foto3 {
+  width: 60%;
+  float: left;
+  box-sizing: border-box;
+  padding: 20px; }
+
+.foto3 img3 {
+  width: 100%;
+  height: auto; }
+
+.texto3 {
+  width: 40%;
+  padding: 40px;
+  float: left;
+  text-align: right;
+  box-sizing: border-box; }
+
+.foot {
+  width: 100%;
+  float: center;
+  box-sizing: border-box; }
+
+@media screen and (max-width: 1028px) {
+  .foto1 {
+    align-items: center;
+    width: 100%; }
+  .texto1 {
+    width: 100%; }
+  .foto2 {
+    align-items: center;
+    width: 100%; }
+  .texto2 {
+    width: 100%;
+    text-align: center; }
+  .foto3 {
+    align-items: center;
+    width: 100%; }
+  .texto3 {
+    width: 100%;
+    text-align: center; }
+  .foot {
+    width: 100%; } }
+
+@media screen and (max-width: 400px) {
+  .contenedor {
+    width: 100%; }
+  .foot {
+    display: none; } }
 
 /*_______________CONFIGURAR LA PAGINA ARAUQUITOS________________________*/
-.seccionArauquitos {
-  width: auto;
-  height: auto;
-  margin: 10px 10px; }
-  .seccionArauquitos .seccionArauquitos-titulo {
-    color: #284d0c; }
+.contenedorArauquitos {
+  width: 80%;
+  max-width: 1000px;
+  margin: 20px;
+  overflow: hidden; }
 
-.texto {
-  display: flex;
-  justify-content: space-around;
-  margin: 10px 10px; }
-  .texto .texto-Arauquitos {
-    color: black;
-    padding: 10px; }
+.textoArauquitos {
+  width: 40%;
+  float: right;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 10px 20px; }
+
+.imgArauquitos {
+  width: 60%;
+  float: left;
+  box-sizing: border-box;
+  padding: 10px; }
+
+.imgArauquitos ArauquitoPrincipal {
+  width: 100%;
+  height: auto; }
 
 #espaciosEntreFotos {
   justify-content: space-between;
@@ -257,6 +315,42 @@ nav {
     border: solid 1px;
     font-size: 21px;
     padding: 10px; }
+  #espaciosEntreFotos .item item1 {
+    width: 100%;
+    height: auto; }
+  #espaciosEntreFotos .item item2 {
+    width: 100%;
+    height: auto; }
+  #espaciosEntreFotos .item item3 {
+    width: 100%;
+    height: auto; }
+  #espaciosEntreFotos .item item4 {
+    width: 100%;
+    height: auto; }
+
+@media screen and (max-width: 1028px) {
+  .imgArauquitos {
+    align-items: center;
+    width: 100%; }
+  .textoArauquitos {
+    width: 100%;
+    text-align: center; }
+  .item1 {
+    width: 100%;
+    align-items: center; }
+  .item2 {
+    width: 100%;
+    align-items: center; }
+  .item3 {
+    width: 100%;
+    align-items: center; }
+  .item4 {
+    width: 100%;
+    align-items: center; } }
+
+@media screen and (max-width: 400px) {
+  .contenedorArauquitos {
+    width: 100%; } }
 
 /*_______________CONFIGURAR LA PAGINA NEW IN________________________*/
 .fondo-tienda {

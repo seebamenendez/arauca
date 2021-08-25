@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Llegamos al mundo Arauquitos con puros deseos, ganas, queriendo saber, conocer todo!">
-    <meta name="keywords"  content="ROPA, MODA, TENDENCIA, URUGUAY, INDUMENTARIA DE NIÑOS">
+    <meta name="description"
+        content="Llegamos al mundo Arauquitos con puros deseos, ganas, queriendo saber, conocer todo!">
+    <meta name="keywords" content="ROPA, MODA, TENDENCIA, URUGUAY, INDUMENTARIA DE NIÑOS">
     <link rel="shortcut icon" href="../multimedia/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -20,9 +21,10 @@
 </head>
 
 <body>
+
     <header>
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
                 <a href="../index.html"><img src="../multimedia/logo.png" alt="logo" width="240" height="120"
                         class="d-inline-block align-text-top"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -49,52 +51,55 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">Temporadas</a>
                             <ul class="dropdown-menu text-success" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown text-success" href="origen.html">Orígen - AW ´21</a></li>
-                                <li><a class="dropdown text-success" href="transitar.html">Transitar - SS ´21</a></li>
+                                <li><a class="dropdown text-success" href="transitar.html">Transitar - SS ´21</a>
+                                </li>
                                 <li><a class="dropdown text-success" href="audaz.html">Audaz - AW ´20</a></li>
                                 <li><a class="dropdown text-success" href="lucida.html">Lúcida - SS ´20</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
-    <section class="seccionArauquitos">
-        <h1 class=seccionArauquitos-titulo>Somos Arauquitos</h1>
-
+    <div class="contenedorArauquitos">
+        <h1>Somos Arauquitos</h1>
+        <section class="textoArauquitos">
+            <p>
+                Llegamos al mundo Arauquitos con puros deseos, ganas, queriendo saber,
+                conocer todo! </br>
+                Estamos felices de compartirles este nuevo viaje.</br>
+                Cómodos. Juntos. Jugando. Descalzos. Con besos y abrazos. Saltando. Diferentes. Libres.</br>
+                ¡Que así sea nuestro universo Arauquitos!
+            </p>
+        </section>
+        <section class="imgArauquitos">
+            <img class="ArauquitoPrincipal" src="../multimedia/Arauquitos.JPG" alt="Arauquitos" widht="400"
+                height="400">
+        </section>
+    </div>
+    <p>
+    <h4 id="Centrado">Algunas de nuestras prendas:</h4>
+    </p>
+    <div id="espaciosEntreFotos">
         <div>
-            <div class="texto">
-                <p class="texto-Arauquitos">
-                    Llegamos al mundo Arauquitos con puros deseos, ganas, queriendo saber,
-                    conocer todo! <br>
-                    Estamos felices de compartirles este nuevo viaje.<br>
-                    Cómodos. Juntos. Jugando. Descalzos. Con besos y abrazos. Saltando. Diferentes. Libes.<br>
-                    ¡Que así sea nuestro universo Arauquitos!
-                </p>
-                <img src="../multimedia/Arauquitos.JPG" alt="Arauquitos" widht="550" height="550">
-            </div>
+            <img class="item item1" src="../multimedia/Arauquitos1.JPG" alt="arauquitos1" widht="300" height="300">
         </div>
-
-        <p>
-        <h4 id="Centrado">Algunas de nuestras prendas:</h4>
-        </p>
-        <div id="espaciosEntreFotos">
-            <div>
-                <img class="item" src="../multimedia/Arauquitos1.JPG" alt="arauquitos1" widht="300" height="300">
-            </div>
-            <div>
-                <img class="item" src="../multimedia/Arauquitos2.JPG" alt="arauquitos2" widht="300" height="300">
-            </div>
-            <div>
-                <img class="item" src="../multimedia/Arauquitos3.JPG" alt="arauquitos3" widht="300" height="300">
-            </div>
-            <div>
-                <img class="item" src="../multimedia/Arauquitos5.JPG" alt="arauquitos4" widht="300" height="300">
-            </div>
+        <div>
+            <img class="item item2" src="../multimedia/Arauquitos2.JPG" alt="arauquitos2" widht="300" height="300">
         </div>
+        <div>
+            <img class="item item3" src="../multimedia/Arauquitos3.JPG" alt="arauquitos3" widht="300" height="300">
+        </div>
+        <div>
+            <img class="item item4" src="../multimedia/Arauquitos5.JPG" alt="arauquitos4" widht="300" height="300">
+        </div>
+    </div>
+    </div>
 
-    </section>
-    <footer>
+
+
+    <footer class="foot">
         <div class="contenidoPrincipal">
             <div class="cajaEnComun">
                 <h5 class="contenido-centrado">Taller</h5>
@@ -145,6 +150,7 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
