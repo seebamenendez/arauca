@@ -96,10 +96,10 @@ li > ul {
 
 /*Le coloco el color de fondo en todos los html */
 body {
+  margin: 0 20px !important;
   background-color: white;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  padding: 20px; }
+  font-size: 16px; }
 
 /*Le coloco un color al titulo h1 */
 h1 {
@@ -178,17 +178,8 @@ p {
 .lineaDebajo {
   text-decoration: underline; }
 
-.header {
-  grid-area: header;
-  padding: 1.25em;
-  background: #fff;
-  box-shadow: 0px 0px 70px rgba(102, 102, 102, 0.2); }
-
-.header .logo {
-  margin-bottom: 1.25em;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 3px; }
+.imgBordes {
+  border-radius: 10px; }
 
 .contenedor {
   width: 80%;
@@ -196,113 +187,20 @@ p {
   margin: 30px;
   overflow: hidden; }
 
-.foto1 {
-  width: 70%;
-  float: left;
-  box-sizing: border-box;
-  padding: 30px; }
-
-.foto1 img {
-  width: 100%;
-  height: auto; }
-
-.texto1 {
-  width: 30%;
-  padding: 10px 10px;
-  float: left;
-  text-align: center;
-  box-sizing: border-box; }
-
-.foto2 {
-  width: 50%;
-  float: right;
-  box-sizing: border-box;
-  padding: 0 40px; }
-
-.foto2 img2 {
-  width: 100%;
-  height: auto; }
-
-.texto2 {
-  width: 50%;
-  padding: 10px 10px;
-  float: right;
-  text-align: left;
-  box-sizing: border-box; }
-
-.foto3 {
-  width: 60%;
-  float: left;
-  box-sizing: border-box;
-  padding: 20px; }
-
-.foto3 img3 {
-  width: 100%;
-  height: auto; }
-
-.texto3 {
-  width: 40%;
-  padding: 40px;
-  float: left;
-  text-align: right;
-  box-sizing: border-box; }
-
 .foot {
   width: 100%;
   float: center;
   box-sizing: border-box; }
 
 @media screen and (max-width: 1028px) {
-  .foto1 {
-    align-items: center;
-    width: 100%; }
-  .texto1 {
-    width: 100%; }
-  .foto2 {
-    align-items: center;
-    width: 100%; }
-  .texto2 {
-    width: 100%;
-    text-align: center; }
-  .foto3 {
-    align-items: center;
-    width: 100%; }
-  .texto3 {
-    width: 100%;
-    text-align: center; }
   .foot {
     width: 100%; } }
 
 @media screen and (max-width: 400px) {
-  .contenedor {
-    width: 100%; }
   .foot {
     display: none; } }
 
 /*_______________CONFIGURAR LA PAGINA ARAUQUITOS________________________*/
-.contenedorArauquitos {
-  width: 80%;
-  max-width: 1000px;
-  margin: 20px;
-  overflow: hidden; }
-
-.textoArauquitos {
-  width: 40%;
-  float: right;
-  text-align: left;
-  box-sizing: border-box;
-  padding: 10px 20px; }
-
-.imgArauquitos {
-  width: 60%;
-  float: left;
-  box-sizing: border-box;
-  padding: 10px; }
-
-.imgArauquitos ArauquitoPrincipal {
-  width: 100%;
-  height: auto; }
-
 #espaciosEntreFotos {
   justify-content: space-between;
   display: grid;
@@ -315,42 +213,12 @@ p {
     border: solid 1px;
     font-size: 21px;
     padding: 10px; }
-  #espaciosEntreFotos .item item1 {
-    width: 100%;
-    height: auto; }
-  #espaciosEntreFotos .item item2 {
-    width: 100%;
-    height: auto; }
-  #espaciosEntreFotos .item item3 {
-    width: 100%;
-    height: auto; }
-  #espaciosEntreFotos .item item4 {
-    width: 100%;
-    height: auto; }
 
-@media screen and (max-width: 1028px) {
-  .imgArauquitos {
-    align-items: center;
-    width: 100%; }
-  .textoArauquitos {
-    width: 100%;
-    text-align: center; }
-  .item1 {
-    width: 100%;
-    align-items: center; }
-  .item2 {
-    width: 100%;
-    align-items: center; }
-  .item3 {
-    width: 100%;
-    align-items: center; }
-  .item4 {
-    width: 100%;
-    align-items: center; } }
+#centrado {
+  text-align: center; }
 
-@media screen and (max-width: 400px) {
-  .contenedorArauquitos {
-    width: 100%; } }
+.imgArauquitos:hover {
+  filter: opacity(0.6); }
 
 /*_______________CONFIGURAR LA PAGINA NEW IN________________________*/
 .fondo-tienda {
