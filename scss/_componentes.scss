@@ -134,6 +134,10 @@ grid-area: footer;
     box-sizing: border-box;
 }
 
+.centradoTexto {
+    text-align: center;
+}
+
 @media screen and (max-width: 1028px){
     .foot {
         width: 100%;
@@ -152,10 +156,8 @@ grid-area: footer;
     justify-content:space-between;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-column-gap: 60px;
+    grid-column-gap: 5px;
     grid-template-rows: auto;
-    margin: 20px;
-    padding: 30px;
     .item {
         border: solid 1px;
         font-size: 21px;

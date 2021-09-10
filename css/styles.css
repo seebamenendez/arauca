@@ -77,6 +77,9 @@ li {
   li a {
     color: white; }
 
+.capaArriba {
+  z-index: 5; }
+
 /*Cambia el color por donde pasa el mouse*/
 li > a:hover {
   text-decoration: underline;
@@ -203,6 +206,9 @@ p {
   float: center;
   box-sizing: border-box; }
 
+.centradoTexto {
+  text-align: center; }
+
 @media screen and (max-width: 1028px) {
   .foot {
     width: 100%; } }
@@ -216,10 +222,8 @@ p {
   justify-content: space-between;
   display: grid;
   grid-template-columns: auto auto auto auto;
-  grid-column-gap: 60px;
-  grid-template-rows: auto;
-  margin: 20px;
-  padding: 30px; }
+  grid-column-gap: 5px;
+  grid-template-rows: auto; }
   #espaciosEntreFotos .item {
     border: solid 1px;
     font-size: 21px;
