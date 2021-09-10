@@ -46,6 +46,17 @@
   background: rgba(47, 88, 14, 0.705);
   top: -10px; }
 
+.redes {
+  text-align: center; }
+
+@media screen and (max-width: 954px) {
+  .cajaEnComun {
+    display: none; } }
+
+@media screen and (min-width: 954px) {
+  .redes {
+    display: none; } }
+
 /*__________________PARA EL MENU DESPLEGABLE________________________*/
 header {
   width: auto;
@@ -96,7 +107,7 @@ li > ul {
 
 /*Le coloco el color de fondo en todos los html */
 body {
-  margin: 0 20px !important;
+  margin: 0 30px;
   background-color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px; }
@@ -285,3 +296,19 @@ p {
   margin: 20px;
   grid-gap: 25px;
   padding: 25px; }
+
+/*_______________CONFIGURAR LA PAGINA DE TEMPORADAS________________________*/
+.galeria img {
+  box-shadow: 0 8px 10px -4px rgba(0, 0, 0, 0.6);
+  border-radius: 15px; }
+
+.galeria .col {
+  margin-bottom: 20px; }
+
+@media screen and (max-width: 600px) {
+  .materialbox-caption {
+    width: 90%; } }
+
+@media screen and (max-width: 992px) {
+  .materialbox-caption {
+    width: 70%; } }

@@ -54,3 +54,21 @@
     background: rgba(47, 88, 14, 0.705);
     top: -10px;
 }
+
+.redes {
+    text-align:center;
+}
+
+
+@media screen and (max-width: 954px) {
+
+    .cajaEnComun{
+        display: none;
+    }  
+}
+
+@media screen and (min-width: 954px) {
+    .redes{
+        display: none;
+    }
+}
