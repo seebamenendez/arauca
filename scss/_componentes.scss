@@ -220,6 +220,11 @@ grid-area: footer;
     grid-row-gap: 20px;
 }
 
+.margenes {
+    margin-top: 36px;
+    margin-left: 65px;
+}
+
     /* Aumentamos la anchura y altura con un for por 4 veces */
 
 @for $i from 1 to 4 {

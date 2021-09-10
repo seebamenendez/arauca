@@ -275,6 +275,10 @@ p {
   margin-top: 2rem;
   grid-row-gap: 20px; }
 
+.margenes {
+  margin-top: 36px;
+  margin-left: 65px; }
+
 /* Aumentamos la anchura y altura con un for por 4 veces */
 .zoom-1 {
   transition: width 1s, height 1s, transform 1s; }
