@@ -17,9 +17,10 @@ li{
 	display: inline-block;
 	list-style:none;
 	position:relative;
-	width:$ancho*2;
+	width: 120px;
     text-align: center;
     text-decoration:none;
+    background-color: white;
     a {
         color: white;
     }
@@ -28,6 +29,7 @@ li{
 .capaArriba {
     z-index: 5;
 }
+
 
 /*Cambia el color por donde pasa el mouse*/
 
