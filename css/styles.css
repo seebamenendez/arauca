@@ -96,6 +96,10 @@ li > a:hover {
   padding-bottom: 0%;
   color: #284d0c; }
 
+.activo {
+  color: black !important;
+  font-weight: bold; }
+
 /*Abre los submenu si es que tiene*/
 li:hover > ul {
   display: block;
