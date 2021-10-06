@@ -116,7 +116,7 @@ const agregarAlCarrito = () => {
        console.log("El producto se agrego correctamente.");
    }
 }
- const ListaCarrito = () => {
+ const AgregarPrenda = () => {
     
     const nombre = prompt("Ingresa el nombre de la prenda:");
     const precio = Number(prompt("Ingresa su precio:"));
