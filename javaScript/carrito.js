@@ -1,5 +1,6 @@
 let listaObjetos;
 let imprimirDatos = document.getElementById("descripcion")
+let precios = document.getElementsByClassName("precio")
 let btn = document.getElementById("agregarAlCarrito")
 
 
@@ -9,22 +10,22 @@ if (localStorage.getItem("carrito") == null) {
     listaObjetos = JSON.parse(localStorage.getItem("carrito"));
 }
 
-//Creo una lista vacia para ir agregando las compras.
-const listaDeCarrito =[];
-
-const agregarAlCarrito = () => {
-
-    let monto = 0;
-
-    listaObjetos.forEach(e => {
-        monto += e.precio
-    })
-
-    console.log("Felicitaciones, tu compra fue aprobada, gastaste " + monto);
-    localStorage.removeItem("carrito")
+//Se ejecuta por la clase "botonAgregar" y guardo en la variable id todos los data-id diferentes.
+function recuperarId(boton) {
+    const id= boton.getAttribute('data-id')
+    agregarAlCarrito(id)
 }
 
+const agregarAlCarrito = (id) => {
+    const articulo = document.getElementById(id)
+    const descripcion = articulo.children[1]
+    const precio = articulo.children[2]
+}
 
+//Se ejecuta por la clase "botonAgregar" y llama a la funcion recuperarId
+document.querySelectorAll('.botonAgregar').forEach(boton =>
+    boton.addEventListener('click', recuperarId(boton))
+)
 
 const verCarrito = () => {
 
@@ -35,6 +36,20 @@ const verCarrito = () => {
         console.log(dato);
     }
 }
+
+/*
+const agregarAlCarrito = () => {
+
+    let monto = 0;
+
+    listaObjetos.forEach(e => {
+        monto += e.precio
+    })
+
+    console.log("Felicitaciones, tu compra fue aprobada, gastaste " + monto);
+    localStorage.removeItem("carrito")
+}*/
+
 
 
 
