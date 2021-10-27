@@ -1,6 +1,8 @@
-//FUNCIONES DE USUARIO
+/****************************************
+ *       ENTIDADES
+ ****************************************/
 
-class Usuarios {
+class Usuario {
 
     constructor({
         nombre,
@@ -13,151 +15,94 @@ class Usuarios {
         this.email = email;
         this.pass = pass;
     }
-}     
+}
 
-const listaDeUsuarios = [];
+/***********************************
+ *           VARIABLES
+ ***********************************/
 
-const archivarUsuario = () => {
-    
-    const nombre = prompt("Ingresa su nombre:");
-    const apellido = prompt("Ingresa su apellido:");
-    const mail = prompt("Ingresa su email:");
-    const pass = prompt("Ingresa su contraseña:");
-    console.log(`Bienvenido ${nombre} ${apellido}.`);
-    
-    const usuario = new Usuarios({
-        nombre: nombre,
-        apellido: apellido,
-        email: mail,
-        pass: pass,
+const listaPersonas = [];
+
+
+/***********************************
+ *           FUNCIONES
+ ***********************************/
+
+ const crearUsuario = () => {
+
+    const usuario = new Usuario({
+        nombre: document.getElementById("nombre").value,
+        apellido: document.getElementById("apellido").value,
+        mail: document.getElementById("email").value,
+        pass: document.getElementById("pass").value,
     })
 
-    if (localStorage.getItem("usuarios") == null) {
-        listaDeUsuarios.push(usuario);
-        localStorage.setItem("usuarios", JSON.stringify(listaDeUsuarios));
-    }else{
-        const nuevaLista = JSON.parse(localStorage.getItem("usuarios"));
-        nuevaLista.push(usuario);
-        localStorage.setItem("usuarios", JSON.stringify(nuevaLista));
+
+    let lista;
+    if (localStorage.getItem("listaPersonas") != null) {
+        lista = JSON.parse(localStorage.getItem("listaPersonas"))
+        lista.push(usuario)
+        localStorage.setItem("listaPersonas", JSON.stringify(lista))
     }
+    listaPersonas.push(usuario)
+
+
+    return usuario
+
 }
 
-const mostrarUsuarios = () => {
 
-    if (localStorage.getItem("usuarios") == null) {
-        console.log("No hay usuarios registrados.");
+//Funcion de Guardar Datos
+const guardarEnBaseDeDatos = () => {
+
+    crearUsuario()
+
+    if (verificarStorage() != undefined) {
+        localStorage.setItem("listaPersonas", JSON.stringify(verificarStorage()))
     } else {
-        const dato = JSON.parse(localStorage.getItem("usuarios"))
-        console.log(dato);
+        localStorage.setItem("listaPersonas", JSON.stringify(listaPersonas))
     }
 }
 
 
-function Verificar () {
-    let emailVerificado = prompt("Ingresa tu email:");
-    let passVerificado = prompt("Ingresa tu contraseña:");
-
-    if(emailVerificado === "admin" && passVerificado === "admin") {
-        console.log("Bienvenido "+ emailVerificado);
-    } else {
-        Error1();
+//Funcion de Verificar Storage
+//Return Array
+const verificarStorage = () => {
+    let dato = [];
+    if (localStorage.getItem("listaPersonas") != null) {
+        dato = JSON.parse(localStorage.getItem("listaPersonas"))
+        return dato
     }
 }
 
-function Error1() {
-    console.log("Algo salio mal. Intenta de nuevo.");
-};
 
-//Consulta si ya existe el usuario en la BD.
-let usuario = prompt("¿Usted ya esta registado? SI/NO");
-usuario= usuario.toLowerCase();
+const eliminarDeLaLista = (email) => {
 
-    switch (usuario) {
-        case "si": 
-            Verificar(); //Si dice que si se verifica el correo y la pass
-            break;
-        case "no": //Si dice que no llama a la funcion de registrar usuario
-            archivarUsuario();
-            break;
-        default :
-        alert("ERROR 404"); //Si no esta dentro de las opciones da error
-    }
+    let listaVieja = JSON.parse(localStorage.getItem("listaPersonas"))
+    let listaNueva = listaVieja.filter(e => e.email != email)
+
+    localStorage.setItem("listaPersonas", JSON.stringify(listaNueva))
+    location.reload()
+
+}
 
  //______________________________________________________________
 
- //FUNCIONES PARA EL CARRITO
-
- class Carrito {
-
-    constructor({
-        nombre,
-        precio,
-        stock,
-        disponible
-    }) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
-        this.disponible = disponible;
-    }
-}     
+ 
+/***********************************
+ *           EVENTOS
+ ***********************************/
 
 
-//Creo una lista vacia para ir agregando las compras.
-const listaDeCarrito =[];
+ document.getElementById("btnSave").addEventListener("click", () => {
+    guardarEnBaseDeDatos()
+})
 
-const agregarAlCarrito = () => {
-   
-   var compra = confirm("¿Añadir este producto al carrito de la compra?");
-   if (compra == false){
-       return;
-   } else{
-       listaDeCarrito.push(compra);
-       console.log("El producto se agrego correctamente.");
-   }
-}
- const AgregarPrenda = () => {
-    
-    const nombre = prompt("Ingresa el nombre de la prenda:");
-    const precio = Number(prompt("Ingresa su precio:"));
-    const stock = Number(prompt("Ingresa su stock:"));
-    if (stock > 0) {
-        disponible = true;
-    }else{
-        disponible = false;
-    }
-    console.log("Se ha agregado con éxito!");
-    
-    const shop = new Carrito({
-        nombre: nombre,
-        precio: precio,
-        stock: stock,
-        disponible: disponible,
-    })
-
-    if (localStorage.getItem("carrito") == null) {
-        listaDeCarrito.push(shop);
-        localStorage.setItem("carrito", JSON.stringify(listaDeCarrito));
-    }else{
-        const nuevaListaDeCarro = JSON.parse(localStorage.getItem("usuarios"));
-        nuevaListaDeCarro.push(usuario);
-        localStorage.setItem("carrito", JSON.stringify(nuevaListaDeCarro));
-    }
+if (localStorage.getItem("listaPersonas") != null) {
+    imprimirDatos()
 }
 
-
-const verCarrito = () => {
-
-    if (localStorage.getItem("carrito") == null) {
-        console.log("El carrito está vacio.");
-    } else {
-        const dato = JSON.parse(localStorage.getItem("carrito"))
-        console.log(dato);
-    }
-}
-
-
-
+console.log(verificarStorage())
 
 
 
