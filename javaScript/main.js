@@ -30,7 +30,7 @@ const listaPersonas = [];
 
  const crearUsuario = () => {
 
-    const usuario = new Usuario({
+    const usuarios = new Usuario({
         nombre: document.getElementById("nombre").value,
         apellido: document.getElementById("apellido").value,
         mail: document.getElementById("email").value,
@@ -41,13 +41,13 @@ const listaPersonas = [];
     let lista;
     if (localStorage.getItem("listaPersonas") != null) {
         lista = JSON.parse(localStorage.getItem("listaPersonas"))
-        lista.push(usuario)
+        lista.push(usuarios)
         localStorage.setItem("listaPersonas", JSON.stringify(lista))
     }
-    listaPersonas.push(usuario)
+    listaPersonas.push(usuarios)
 
 
-    return usuario
+    return usuarios
 
 }
 
@@ -105,4 +105,8 @@ if (localStorage.getItem("listaPersonas") != null) {
 console.log(verificarStorage())
 
 
+
+//______________________________________________________________
+
+ 
 
