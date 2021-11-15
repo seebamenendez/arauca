@@ -59,82 +59,146 @@
                             <a class="nav-link text-success" href="agregarCliente.html">Inscribirse</a>
                         </li>
                     </ul>
+                    
                 </div>
             </nav>
         </div>
     </header>
     <h1>¡Compra ahora!</h1>
+
+    <!--  VENTANA MODAL  -->
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Iniciar sesion
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ingresa tus datos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+    
+    
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-4">
+                            <label for="validationCustomUsername" class="form-label">Email</label>
+                            <div class="input-group has-validation">
+                                <input type="mail" class="form-control" pattern="[^ @]*@[^ @]*" id="validationCustomUsername"
+                                    aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom03" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="validationPassword" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Iniciar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--  -------------  -->
+
     <main class="margenes">
 
         <section class="row">
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo1">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_001.JPG" width="260" height="300" alt="IMG_01">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_001.JPG" width="260"
+                    height="300" alt="IMG_01">
                 <p class="descripcion">Campera ORIGEN</p>
                 <p class="precio">UY$2690</p>
                 <button data-id="articulo1" class="botonAgregar">AGREGAR</button>
             </article>
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo2">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_003.JPG" width="260" height="300" alt="IMG_03">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_003.JPG" width="260"
+                    height="300" alt="IMG_03">
                 <p class="descripcion">Vestido NATIVO</p>
                 <p class="precio">UY$2400</p>
                 <button data-id="articulo2" class="botonAgregar">AGREGAR</button>
             </article>
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo3">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_004.JPG" width="260" height="300" alt="IMG_04">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_004.JPG" width="260"
+                    height="300" alt="IMG_04">
                 <p class="descripcion">Camisa OVER</p>
                 <p class="precio">UY$1990</p>
                 <button data-id="articulo3" class="botonAgregar">AGREGAR</button>
             </article>
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo4">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_005.JPG" width="260" height="300" alt="IMG_05">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_005.JPG" width="260"
+                    height="300" alt="IMG_05">
                 <p class="descripcion">Básica Algodón</p>
                 <p class="precio">UY$1700</p>
                 <button data-id="articulo4" class="botonAgregar">AGREGAR</button>
             </article>
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo5">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_006.JPG" width="260" height="300" alt="IMG_06">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_006.JPG" width="260"
+                    height="300" alt="IMG_06">
                 <p class="descripcion">Sobrecamisa - PANTS</p>
                 <p class="precio">UY$2390</p>
                 <button data-id="articulo5" class="botonAgregar">AGREGAR</button>
             </article>
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo6">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_002.JPG" width="260" height="300" alt="IMG_02">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_002.JPG" width="260"
+                    height="300" alt="IMG_02">
                 <p class="descripcion">Campera ORIGEN</p>
                 <p class="precio">UY$2690</p>
                 <button data-id="articulo6" class="botonAgregar">AGREGAR</button>
             </article>
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo7">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_007.JPG" width="260" height="300" alt="IMG_07">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_007.JPG" width="260"
+                    height="300" alt="IMG_07">
                 <p class="descripcion">Sobrecamisa - PANTS</p>
                 <p class="precio">UY$2390</p>
                 <button data-id="articulo7" class="botonAgregar">AGREGAR</button>
             </article>
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo8">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_008.JPG" width="260" height="300" alt="IMG_08">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_008.JPG" width="260"
+                    height="300" alt="IMG_08">
                 <p class="descripcion">Sobrecamisa GALOPE</p>
                 <p class="precio">UY$</p>
                 <button data-id="articulo8" class="botonAgregar">AGREGAR</button>
             </article>
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo9">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_009.JPG" width="260" height="300" alt="IMG_09">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_009.JPG" width="260"
+                    height="300" alt="IMG_09">
                 <p class="descripcion">Pantalón ORION</p>
                 <p class="precio">UY$2390</p>
                 <button data-id="articulo9" class="botonAgregar">AGREGAR</button>
             </article>
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo10">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_001.JPG" width="260" height="300" alt="IMG_010">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_001.JPG" width="260"
+                    height="300" alt="IMG_010">
                 <p class="descripcion">Campera ORIGEN</p>
                 <p class="precio">UY$2690</p>
                 <button data-id="articulo10" class="botonAgregar">AGREGAR</button>
             </article>
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo11">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_002.JPG" width="260" height="300" alt="IMG_011">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_002.JPG" width="260"
+                    height="300" alt="IMG_011">
                 <p class="descripcion">Campera ORIGEN</p>
                 <p class="precio">UY$2690</p>
                 <button data-id="articulo11" class="botonAgregar">AGREGAR</button>
             </article>
             <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo12">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_003.JPG" width="260" height="300" alt="IMG_012">
+                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_003.JPG" width="260"
+                    height="300" alt="IMG_012">
                 <p class="descripcion">Vestido NATIVO - Cuellito SALVADOR</p>
                 <p class="precio">UY$2400</p>
                 <button data-id="articulo12" class="botonAgregar">AGREGAR</button>
@@ -147,8 +211,8 @@
                 <h5 class="contenido-centrado">Taller</h5>
                 <div class="contenido">
                     <p>
-                        <h6><a class="contenido-centrado" href="https://goo.gl/maps/Wmft8SKSF9Y7NdZy6">Rincón
-                                682, oficina 22, Montevideo, UY.</a></h6>
+                    <h6><a class="contenido-centrado" href="https://goo.gl/maps/Wmft8SKSF9Y7NdZy6">Rincón
+                            682, oficina 22, Montevideo, UY.</a></h6>
                     </p>
                     <p>
                     <h6 class="contenido-centrado">Coordina tu visita.</h6>
@@ -196,9 +260,9 @@
             <div class="contenido">
                 <p class="contenido-centrado ">
                     <a href="https://www.facebook.com/araucadesign1/">
-                        <img src="../multimedia/facebook.svg" width="30px" height="30px" alt="facebook"/></a>
+                        <img src="../multimedia/facebook.svg" width="30px" height="30px" alt="facebook" /></a>
                     <a href="https://www.instagram.com/araucadesign/">
-                        <img src="../multimedia/instagram.svg" width="30px" height="30px" alt="instagram"/></a>
+                        <img src="../multimedia/instagram.svg" width="30px" height="30px" alt="instagram" /></a>
                     <a href="https://api.whatsapp.com/send?phone=59899463779">
                         <img src="../multimedia/whatsapp.svg" width="30px" height="30px" alt="whatsapp" /></a>
                     <a href=mailto:arauca@gmail.com?subject="Enviar Consulta">
@@ -213,4 +277,5 @@
     <script src="../javaScript/jquery.js"></script>
     <script src="../javaScript/carrito.js"></script>
 </body>
+
 </html>
