@@ -33,7 +33,7 @@ const listaPersonas = [];
     const usuarios = new Usuario({
         nombre: document.getElementById("nombre").value,
         apellido: document.getElementById("apellido").value,
-        mail: document.getElementById("email").value,
+        email: document.getElementById("correo").value,
         pass: document.getElementById("pass").value,
     })
 
@@ -52,7 +52,7 @@ const listaPersonas = [];
 }
 
 
-//Funcion de Guardar Datos
+//Funcion de Guardar Datos en localstorage
 const guardarEnBaseDeDatos = () => {
 
     crearUsuario()
@@ -96,10 +96,11 @@ const eliminarDeLaLista = (email) => {
 
  document.getElementById("btnSave").addEventListener("click", () => {
     guardarEnBaseDeDatos()
+    alert("Se ha guardado correctamente")
 })
 
 if (localStorage.getItem("listaPersonas") != null) {
-    imprimirDatos()
+    console.log(listaPersonas);
 }
 
 console.log(verificarStorage())
