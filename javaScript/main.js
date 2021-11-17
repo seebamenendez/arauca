@@ -94,16 +94,15 @@ const eliminarDeLaLista = (email) => {
  ***********************************/
 
 
- document.getElementById("btnSave").addEventListener("click", () => {
-    guardarEnBaseDeDatos()
-    alert("Se ha guardado correctamente")
-})
+ document.getElementById("btnSave").addEventListener("click", (e) => {
+    e.preventDefault();
+    guardarEnBaseDeDatos();
+    alert("Se ha guardado correctamente");
+});
 
 if (localStorage.getItem("listaPersonas") != null) {
     console.log(listaPersonas);
 }
-
-console.log(verificarStorage())
 
 
 
