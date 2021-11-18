@@ -1,14 +1,12 @@
+//VERIFICAR STORAGE SI EXISTEN USUARIOS REGISTRADOS
 
+//const listaUsuarios = [];
 
-function obtenerListaUsuarios() {
-    var listaUsuarios = JSON.parse(localStorage.getItem('listausuarios'));
-
-    if (listaUsuarios == null) {
-        listaUsuarios =
-        [
-            //nombre  apellido       mail            pass    
-            ['admin', 'admin', 'admin@gmail.com', 'admin1234']
-        ]
+const verificarStorage = () => {
+    let dato = [];
+    if (localStorage.getItem("listaUsuarios") != null) {
+        dato = JSON.parse(localStorage.getItem("listaUsuarios"))
+        //return dato
+        console.log(dato);
     }
-    return listaUsuarios;
 }
