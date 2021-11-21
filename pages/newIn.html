@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700&display=swap"
         rel="stylesheet">
+    
     <title>Shop | Arauca</title>
 </head>
 
@@ -58,25 +59,36 @@
                         <li class="nav-item">
                             <a class="nav-link text-success" href="agregarCliente.html">Inscribirse</a>
                         </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Iniciar sesion
-                            </button>
+                        <li class="nav-item" id="app">
+                            <button id="button-login">Iniciar sesion</button>
+                            <button id="button-logout">Cerrar sesion</button>
+                        </li>
+                        <li class="nav-item" id="app">
+                            <form id="todo-form" class="hidden">
+                                <div id="user-info"></div>
+                            </form>
                         </li>
                     </ul>
-                    
+
                 </div>
             </nav>
         </div>
     </header>
     <h1>¡Compra ahora!</h1>
 
-    <!--  VENTANA MODAL  -->
+    <template id="template-card">
+        <div class="card">
+            <img src="" alt="" class="card-img-top">
+            <div class="card-body"></div>
+            <h5>Titulo</h5>
+            <p>Precio</p>
+            <button class="btn btn-dark">AGREGAR</button>
+        </div>
+    </template>
 
-    <!-- Button trigger modal -->
-    
-    
-    <!-- Modal -->
+
+    <!--  VENTANA MODAL  -->
+    <!--
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -85,14 +97,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-    
-    
+
+
                     <form class="row g-3 needs-validation" novalidate>
                         <div class="col-md-4">
                             <label for="validationCustomUsername" class="form-label">Email</label>
                             <div class="input-group has-validation">
-                                <input type="mail" class="form-control" pattern="[^ @]*@[^ @]*" id="validationCustomUsername"
-                                    aria-describedby="inputGroupPrepend" required>
+                                <input type="mail" class="form-control" pattern="[^ @]*@[^ @]*"
+                                    id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                                 <div class="invalid-feedback">
                                     Please choose a username.
                                 </div>
@@ -116,90 +128,92 @@
     </div>
 
 
+    
 
-    <!--  -------------  -->
+
+
 
     <main class="margenes">
 
-        <section class="row">
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo1">
+        <section class="row" id="items">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo1 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_001.JPG" width="260"
                     height="300" alt="IMG_01">
                 <p class="descripcion">Campera ORIGEN</p>
                 <p class="precio">UY$2690</p>
                 <button data-id="articulo1" class="botonAgregar">AGREGAR</button>
             </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo2">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo2 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_003.JPG" width="260"
                     height="300" alt="IMG_03">
                 <p class="descripcion">Vestido NATIVO</p>
                 <p class="precio">UY$2400</p>
                 <button data-id="articulo2" class="botonAgregar">AGREGAR</button>
             </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo3">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo3 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_004.JPG" width="260"
                     height="300" alt="IMG_04">
                 <p class="descripcion">Camisa OVER</p>
                 <p class="precio">UY$1990</p>
                 <button data-id="articulo3" class="botonAgregar">AGREGAR</button>
             </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo4">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo4 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_005.JPG" width="260"
                     height="300" alt="IMG_05">
                 <p class="descripcion">Básica Algodón</p>
                 <p class="precio">UY$1700</p>
                 <button data-id="articulo4" class="botonAgregar">AGREGAR</button>
             </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo5">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo5 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_006.JPG" width="260"
                     height="300" alt="IMG_06">
                 <p class="descripcion">Sobrecamisa - PANTS</p>
                 <p class="precio">UY$2390</p>
                 <button data-id="articulo5" class="botonAgregar">AGREGAR</button>
             </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo6">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo6 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_002.JPG" width="260"
                     height="300" alt="IMG_02">
                 <p class="descripcion">Campera ORIGEN</p>
                 <p class="precio">UY$2690</p>
                 <button data-id="articulo6" class="botonAgregar">AGREGAR</button>
             </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo7">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo7 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_007.JPG" width="260"
                     height="300" alt="IMG_07">
                 <p class="descripcion">Sobrecamisa - PANTS</p>
                 <p class="precio">UY$2390</p>
                 <button data-id="articulo7" class="botonAgregar">AGREGAR</button>
             </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo8">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo8 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_008.JPG" width="260"
                     height="300" alt="IMG_08">
                 <p class="descripcion">Sobrecamisa GALOPE</p>
-                <p class="precio">UY$</p>
+                <p class="precio">UY$2100</p>
                 <button data-id="articulo8" class="botonAgregar">AGREGAR</button>
             </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo9">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo9 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_009.JPG" width="260"
                     height="300" alt="IMG_09">
                 <p class="descripcion">Pantalón ORION</p>
                 <p class="precio">UY$2390</p>
                 <button data-id="articulo9" class="botonAgregar">AGREGAR</button>
             </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo10">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo10 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_001.JPG" width="260"
                     height="300" alt="IMG_010">
                 <p class="descripcion">Campera ORIGEN</p>
                 <p class="precio">UY$2690</p>
                 <button data-id="articulo10" class="botonAgregar">AGREGAR</button>
             </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo11">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo11 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_002.JPG" width="260"
                     height="300" alt="IMG_011">
                 <p class="descripcion">Campera ORIGEN</p>
                 <p class="precio">UY$2690</p>
                 <button data-id="articulo11" class="botonAgregar">AGREGAR</button>
             </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo12">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo12 template-card">
                 <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_003.JPG" width="260"
                     height="300" alt="IMG_012">
                 <p class="descripcion">Vestido NATIVO - Cuellito SALVADOR</p>
@@ -208,6 +222,9 @@
             </article>
         </section>
     </main>
+
+    -->
+
     <footer class="margen">
         <div class="contenidoPrincipal">
             <div class="cajaEnComun">
@@ -277,9 +294,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    <script src="../javaScript/login.js"></script>
-    <script src="../javaScript/jquery.js"></script>
-    <!-- <script src="../javaScript/carrito.js"></script> -->
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script>
+        // TODO: Replace the following with your app's Firebase project configuration
+        // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+        const firebaseConfig = {
+            apiKey: "AIzaSyDJGwzD11jZeQECNybAWqXKXR_wVV6Q94M",
+            authDomain: "arauca-design.firebaseapp.com",
+            projectId: "arauca-design",
+            storageBucket: "arauca-design.appspot.com",
+            messagingSenderId: "1063193158710",
+            appId: "1:1063193158710:web:f3623afb237805f56e6497"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+    </script>
+    <script src="../javaScript/carrito.js"></script>
+    <script type="module" src="../javaScript/login.js"></script>
+    <script type="module" src="../javaScript/auth.js"></script>
+    <script type="module" src="../javaScript/firestore.js"></script>
+    <!-- <script src="../javaScript/jquery.js"></script> -->
 </body>
 
 </html>
