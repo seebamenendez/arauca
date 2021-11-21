@@ -1,3 +1,38 @@
+const items = document.getElementById('items')
+const templateCard = document.getElementById('template-card').content
+const fragment = document.createDocumentFragment();
+
+//Cuando se carga todo el HTML que se ejecute la funcion
+document.addEventListener('DOMContentLoaded', () => {
+    fetchData();
+});
+
+// Traer productos
+const fetchData = async () => {
+    const res = await fetch('api.json');
+    const data = await res.json()
+    // console.log(data)
+    pintarCards(data)
+}
+
+
+function pintarCards(data) {
+    data.forEach(producto => {
+        templateCard.querySelector('.descripcion').textContent = producto.title;
+        templateCard.querySelector('.precio').textContent = producto.precio;
+        templateCard.querySelector('img').setAttribute("src", producto.thumbnailUrl);
+        templateCard.querySelector('.botonAgregar').dataset.id = producto.id;
+
+        const clone = templateCard.cloneNode(true);
+        fragment.appendChild(clone);
+    });
+    items.appendChild(fragment);
+}
+
+
+
+
+/*
 let listaObjetos;
 let imprimirDatos = document.getElementById("descripcion")
 let precios = document.getElementsByClassName("precio")
@@ -30,7 +65,7 @@ document.querySelectorAll('.botonAgregar').forEach(boton =>
 const verCarrito = () => {
 
     if (localStorage.getItem("carrito") == null) {
-        console.log("El carrito está vacio.");
+        //console.log("El carrito está vacio.");
     } else {
         const dato = JSON.parse(localStorage.getItem("carrito"))
         console.log(dato);
@@ -41,7 +76,7 @@ const verCarrito = () => {
 /***********************************
  *           API DEL DOLAR
  ***********************************/
-
+/*
  const url="https://www.dolarsi.com/api/api.php?type=valoresprincipales"
 
  //Para que actualice automaticamente cada 5seg
