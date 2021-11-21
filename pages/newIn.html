@@ -76,154 +76,75 @@
     </header>
     <h1>¡Compra ahora!</h1>
 
-    <template id="template-card">
-        <div class="card">
-            <img src="" alt="" class="card-img-top">
-            <div class="card-body"></div>
-            <h5>Titulo</h5>
-            <p>Precio</p>
-            <button class="btn btn-dark">AGREGAR</button>
-        </div>
-    </template>
-
-
-    <!--  VENTANA MODAL  -->
-    <!--
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ingresa tus datos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-
-                    <form class="row g-3 needs-validation" novalidate>
-                        <div class="col-md-4">
-                            <label for="validationCustomUsername" class="form-label">Email</label>
-                            <div class="input-group has-validation">
-                                <input type="mail" class="form-control" pattern="[^ @]*@[^ @]*"
-                                    id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                <div class="invalid-feedback">
-                                    Please choose a username.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="validationCustom03" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="validationPassword" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid city.
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Iniciar</button>
-                </div>
+    
+    <div class="container">
+        <div class="row" id="cards"></div>
+      </div>
+  
+      <template id="template-footer">
+          <th scope="row" colspan="2">Total productos</th>
+          <td>10</td>
+          <td>
+              <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+                  vaciar todo
+              </button>
+          </td>
+          <td class="font-weight-bold">$ <span>5000</span></td>
+      </template>
+      
+      <template id="template-carrito">
+        <tr>
+          <th scope="row">id</th>
+          <td>Café</td>
+          <td>1</td>
+          <td>
+              <button class="btn btn-info btn-sm">
+                  +
+              </button>
+              <button class="btn btn-danger btn-sm">
+                  -
+              </button>
+          </td>
+          <td>$ <span>500</span></td>
+        </tr>
+      </template>
+  
+      <template id="template-card">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+          <div class="card">
+              <img src="" alt="" class="card-img-top zoom-1 img-fluid" width="3">
+              <div class="card-body">
+              <h5>Titulo</h5>
+              <p>precio</p>
+              <button class="btn btn-dark">Comprar</button>
             </div>
+          </div>
         </div>
+      </template>
+
+      <h4>Carrito de compras</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Item</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Acción</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody id="items"></tbody>
+          <tfoot>
+            <tr id="footer">
+              <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+            </tr>
+          </tfoot>
+        </table>
     </div>
 
 
-    
 
 
-
-
-    <main class="margenes">
-
-        <section class="row" id="items">
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo1 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_001.JPG" width="260"
-                    height="300" alt="IMG_01">
-                <p class="descripcion">Campera ORIGEN</p>
-                <p class="precio">UY$2690</p>
-                <button data-id="articulo1" class="botonAgregar">AGREGAR</button>
-            </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo2 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_003.JPG" width="260"
-                    height="300" alt="IMG_03">
-                <p class="descripcion">Vestido NATIVO</p>
-                <p class="precio">UY$2400</p>
-                <button data-id="articulo2" class="botonAgregar">AGREGAR</button>
-            </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo3 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_004.JPG" width="260"
-                    height="300" alt="IMG_04">
-                <p class="descripcion">Camisa OVER</p>
-                <p class="precio">UY$1990</p>
-                <button data-id="articulo3" class="botonAgregar">AGREGAR</button>
-            </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo4 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_005.JPG" width="260"
-                    height="300" alt="IMG_05">
-                <p class="descripcion">Básica Algodón</p>
-                <p class="precio">UY$1700</p>
-                <button data-id="articulo4" class="botonAgregar">AGREGAR</button>
-            </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo5 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_006.JPG" width="260"
-                    height="300" alt="IMG_06">
-                <p class="descripcion">Sobrecamisa - PANTS</p>
-                <p class="precio">UY$2390</p>
-                <button data-id="articulo5" class="botonAgregar">AGREGAR</button>
-            </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo6 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_002.JPG" width="260"
-                    height="300" alt="IMG_02">
-                <p class="descripcion">Campera ORIGEN</p>
-                <p class="precio">UY$2690</p>
-                <button data-id="articulo6" class="botonAgregar">AGREGAR</button>
-            </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo7 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_007.JPG" width="260"
-                    height="300" alt="IMG_07">
-                <p class="descripcion">Sobrecamisa - PANTS</p>
-                <p class="precio">UY$2390</p>
-                <button data-id="articulo7" class="botonAgregar">AGREGAR</button>
-            </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo8 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_008.JPG" width="260"
-                    height="300" alt="IMG_08">
-                <p class="descripcion">Sobrecamisa GALOPE</p>
-                <p class="precio">UY$2100</p>
-                <button data-id="articulo8" class="botonAgregar">AGREGAR</button>
-            </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo9 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_009.JPG" width="260"
-                    height="300" alt="IMG_09">
-                <p class="descripcion">Pantalón ORION</p>
-                <p class="precio">UY$2390</p>
-                <button data-id="articulo9" class="botonAgregar">AGREGAR</button>
-            </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo10 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_001.JPG" width="260"
-                    height="300" alt="IMG_010">
-                <p class="descripcion">Campera ORIGEN</p>
-                <p class="precio">UY$2690</p>
-                <button data-id="articulo10" class="botonAgregar">AGREGAR</button>
-            </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo11 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_002.JPG" width="260"
-                    height="300" alt="IMG_011">
-                <p class="descripcion">Campera ORIGEN</p>
-                <p class="precio">UY$2690</p>
-                <button data-id="articulo11" class="botonAgregar">AGREGAR</button>
-            </article>
-            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-4" id="articulo12 template-card">
-                <img loading="lazy" class="zoom-1 img-fluid" src="../multimedia/newIn/IMG_003.JPG" width="260"
-                    height="300" alt="IMG_012">
-                <p class="descripcion">Vestido NATIVO - Cuellito SALVADOR</p>
-                <p class="precio">UY$2400</p>
-                <button data-id="articulo12" class="botonAgregar">AGREGAR</button>
-            </article>
-        </section>
-    </main>
-
-    -->
 
     <footer class="margen">
         <div class="contenidoPrincipal">
@@ -319,11 +240,12 @@
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
     </script>
-    <script src="../javaScript/carrito.js"></script>
+    <script src="../javaScript/app.js"></script>
+    <script src="../javaScript/jquery.js"></script>
     <script type="module" src="../javaScript/login.js"></script>
     <script type="module" src="../javaScript/auth.js"></script>
     <script type="module" src="../javaScript/firestore.js"></script>
-    <!-- <script src="../javaScript/jquery.js"></script> -->
+    <!-- <script src="../javaScript/carrito.js"></script> -->
 </body>
 
 </html>
