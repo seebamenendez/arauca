@@ -2,8 +2,8 @@ import {logout, login} from "./auth.js";
 import { insert, getItems, update } from "./firestore.js";
 import { getUUID } from "./utils.js";
 
-const buttonLogin = document.querySelector("#button-login");
-const buttonLogout = document.querySelector("#button-logout");
+const buttonLogin = document.getElementById("button-login");
+const buttonLogout = document.getElementById("button-logout");
 const todoForm = document.querySelector("#todo-form");
 const userInfo = document.querySelector("#user-info");
 const todoInput = document.querySelector("#todo-input");
@@ -104,6 +104,25 @@ async function addTodo(text) {
     }
     
 }
+
+
+buttonLogin.addEventListener("click", async (e) => {
+    try {
+      currentUser = await login();
+      init();
+    } catch (error) {
+      console.error(error);
+    }
+  });
+  
+  buttonLogout.addEventListener("click", (e) => {
+    logout();
+    //localStorage.removeItem("user");
+    buttonLogin.classList.remove("hidden");
+    buttonLogout.classList.add("hidden");
+    todoForm.classList.add("hidden");
+    todosContainer.innerHTML = "";
+  });
 
 //Que elementos se muestra y cuales no
 function init() {
