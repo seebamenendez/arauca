@@ -111,6 +111,10 @@ li:hover > ul {
 li > ul {
   display: none; }
 
+  .hidden {
+    display: none;
+  }
+
 /*____________________CODIGO GENERAL_________________________________*/
 * {
   padding: 0px;
@@ -148,7 +152,10 @@ p {
 
 .containerMobile {
   display: grid;
-  grid-template-areas: "img nav nav" ". carusel ." ". carusel ." ". footer .";
+  grid-template-areas: "img nav nav"
+ ". carusel ."
+ ". carusel ."
+ ". footer .";
   grid-template-columns: auto;
   grid-template-rows: repeat(8, 110px);
   grid-gap: 1rem; }
