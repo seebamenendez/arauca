@@ -90,7 +90,7 @@ const pintarFooter = () => {
     
     if (Object.keys(carrito).length === 0) {
         footer.innerHTML = `
-        <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
+        <th scope="row" colspan="5" class="centradoTexto">Carrito vacío - Comience a comprar!</th>
         `
         return
     }
@@ -108,10 +108,15 @@ const pintarFooter = () => {
 
     footer.appendChild(fragment)
 
-    const boton = document.querySelector('#vaciar-carrito')
-    boton.addEventListener('click', () => {
+    const botonVaciar = document.querySelector('#vaciar-carrito')
+    botonVaciar.addEventListener('click', () => {
         carrito = {}
         pintarCarrito()
+    })
+
+    const botonFinalizar = document.querySelector('#finalizar-compra')
+    botonFinalizar.addEventListener('click', () => {
+        alert("Gracias por su compra, el envio se gestionara a la brevedad");
     })
 
 }
